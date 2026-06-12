@@ -1,0 +1,13 @@
+{
+  "editor.tabSize": 2,
+  "editor.rulers": [100],
+  "editor.defaultFormatter": "biomejs.biome",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "telemetry.feedback.enabled": false,
+  "editor.formatOnSave": true,
+  "npm.packageManager": "bun",
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  }
+}
