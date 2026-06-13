@@ -1,0 +1,19 @@
+services:
+  nextplate:
+    # image: nextplate:latest # docker buildx build -t nextplate:latest .
+    build: .
+    environment:
+      NEXT_TELEMETRY_DISABLED: 1
+      # generate with `openssl rand -base64 32`
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET:-you-should-change-this-secret-key}
+      BETTER_AUTH_URL: ${BETTER_AUTH_URL:-http://localhost:8000/api/auth}
+      NODE_ENV: production
+      PORT: 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - nextplate-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  nextplate-data:
